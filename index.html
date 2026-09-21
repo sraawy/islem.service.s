@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISLEM SERVICE | Activation Snapchat+ en Algérie</title>
+  <meta name="description" content="Activez Snapchat+ en Algérie avec ISLEM SERVICE. Sans mot de passe, activation ultra-rapide, paiement BaridiMob & CCP.">
+  <meta name="theme-color" content="#060608">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-fr">
+
+  <!-- Ambient Background -->
+  <div class="bg-fixed">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-bg"></div>
+  </div>
+
+  <!-- Particles Canvas -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Language Welcome Overlay -->
+  <div class="lang-overlay" id="langOverlay" role="dialog" aria-modal="true" aria-label="Choisir la langue">
+    <div class="lang-modal">
+      <div class="lang-modal-glow"></div>
+      <div class="lang-logo">
+        <div class="logo-box big">
+          <i class="fa-brands fa-snapchat"></i>
+          <span class="logo-plus-badge">+</span>
+        </div>
+        <h2>ISLEM <span class="yellow">SERVICE</span></h2>
+        <p class="brand-sub">PLUS QU'UN SERVICE</p>
+      </div>
+      <h3 class="lang-title">Choisissez votre langue<br><span class="ar-text">اختر لغتك</span></h3>
+      <div class="lang-choices">
+        <button class="lang-choice" onclick="chooseLang('fr')">
+          <span class="flag">🇫🇷</span>
+          <div>
+            <strong>Français</strong>
+            <small>Continuer en Français</small>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="lang-choice" onclick="chooseLang('ar')">
+          <span class="flag">🇩🇿</span>
+          <div>
+            <strong>العربية</strong>
+            <small>المتابعة بالعربية</small>
+          </div>
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side Dot Navigation -->
+  <nav class="sidenav" id="sidenav" aria-label="Navigation">
+    <ul>
+      <li><a href="#s-hero"     class="dot active" data-label="Accueil"></a></li>
+      <li><a href="#s-adv"      class="dot"        data-label="Garanties"></a></li>
+      <li><a href="#s-offers"   class="dot"        data-label="Offres"></a></li>
+      <li><a href="#s-why"      class="dot"        data-label="Pourquoi Nous"></a></li>
+      <li><a href="#s-steps"    class="dot"        data-label="Processus"></a></li>
+      <li><a href="#s-reviews"  class="dot"        data-label="Avis Clients"></a></li>
+      <li><a href="#s-faq"      class="dot"        data-label="FAQ"></a></li>
+    </ul>
+  </nav>
+
+  <!-- Persistent Site Header Wrap -->
+  <header class="site-header-wrap" id="headerWrap">
+    <!-- Announcement Bar -->
+    <div class="announce-bar">
+      <span class="pulse-dot"></span>
+      <span data-i18n="ann">⚡ Service actif 7j/7 — Activation Snapchat+ en 5 à 15 min</span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <div class="header-inner container">
+      <a href="#s-hero" class="logo">
+        <div class="logo-box">
+          <i class="fa-brands fa-snapchat"></i>
+          <span class="logo-plus-badge">+</span>
+        </div>
+        <div class="logo-texts">
+          <span class="logo-name">ISLEM <span class="yellow">SERVICE</span></span>
+          <span class="logo-tagline" data-i18n="slogan">PLUS QU'UN SERVICE</span>
+        </div>
+      </a>
+
+      <nav class="top-nav" id="topNav">
+        <a href="#s-hero"    class="tnav active" data-i18n="nav_home">Accueil</a>
+        <a href="#s-adv"     class="tnav" data-i18n="nav_adv">Avantages</a>
+        <a href="#s-offers"  class="tnav" data-i18n="nav_offers">Offres</a>
+        <a href="#s-why"     class="tnav" data-i18n="nav_why">Pourquoi Nous</a>
+        <a href="#s-reviews" class="tnav" data-i18n="nav_reviews">Avis</a>
+        <a href="#s-faq"     class="tnav" data-i18n="nav_faq">FAQ</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang-pill">
+          <button class="lpill-btn active" id="btn-fr" onclick="setLang('fr')">🇫🇷 FR</button>
+          <button class="lpill-btn"        id="btn-ar" onclick="setLang('ar')">🇩🇿 ع</button>
+        </div>
+        <a href="https://wa.me/213799141916" target="_blank" class="wa-header-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span data-i18n="wa_direct">WhatsApp</span>
+        </a>
+        <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#s-hero"    class="mnav" onclick="toggleNav()" data-i18n="nav_home">Accueil</a>
+    <a href="#s-adv"     class="mnav" onclick="toggleNav()" data-i18n="nav_adv">Avantages</a>
+    <a href="#s-offers"  class="mnav" onclick="toggleNav()" data-i18n="nav_offers">Offres & Tarifs</a>
+    <a href="#s-why"     class="mnav" onclick="toggleNav()" data-i18n="nav_why">Pourquoi Nous</a>
+    <a href="#s-steps"   class="mnav" onclick="toggleNav()" data-i18n="nav_steps">Processus</a>
+    <a href="#s-reviews" class="mnav" onclick="toggleNav()" data-i18n="nav_reviews">Avis Clients</a>
+    <a href="#s-faq"     class="mnav" onclick="toggleNav()" data-i18n="nav_faq">FAQ</a>
+  </div>
+
+  <!-- ====== MAIN CONTENT ====== -->
+  <main id="mainContent">
+
+    <!-- ─── SECTION 1: HERO ─── -->
+    <section class="section section-hero" id="s-hero">
+      <div class="hero-inner container">
+        <div class="hero-content">
+          <div class="hero-pill reveal-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span data-i18n="hero_badge">Activation 100% Officielle & Sans Mot de Passe</span>
+          </div>
+
+          <h1 class="hero-h1 reveal-item">
+            <span data-i18n="h1_a">Activez Votre</span>
+            <span class="yellow glow-text" data-i18n="h1_b">Snapchat+</span>
+            <span class="h1-sub" data-i18n="h1_c">En Algérie — Au Meilleur Prix</span>
+          </h1>
+
+          <p class="hero-desc reveal-item" data-i18n="hero_desc">
+            Profitez de toutes les fonctionnalités exclusives Snapchat+ instantanément. Activation rapide, sécurisée, paiement facile par BaridiMob ou CCP.
+          </p>
+
+          <div class="hero-btns reveal-item">
+            <a href="#s-offers" class="btn btn-primary pulse-btn">
+              <span data-i18n="btn_offer">Choisir Mon Offre</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <a href="https://wa.me/213799141916" target="_blank" class="btn btn-ghost">
+              <i class="fa-brands fa-whatsapp" style="color:#25D366"></i>
+              <span>+213 799 14 19 16</span>
+            </a>
+          </div>
+
+          <div class="trust-row reveal-item">
+            <div class="trust-badge"><i class="fa-solid fa-bolt yellow"></i><span data-i18n="t1">5-15 Min</span></div>
+            <div class="trust-badge"><i class="fa-solid fa-lock yellow"></i><span data-i18n="t2">Sans Mdp</span></div>
+            <div class="trust-badge"><i class="fa-solid fa-mobile-screen yellow"></i><span data-i18n="t3">BaridiMob & CCP</span></div>
+          </div>
+        </div>
+
+        <!-- Hero Card Visual -->
+        <div class="hero-card-wrap reveal-item" id="heroCardWrap">
+          <div class="hero-card beam-border" id="heroCard">
+            <div class="hc-live"><i class="fa-solid fa-circle-check"></i> <span data-i18n="live">Snapchat+ Activé</span></div>
+
+            <div class="hc-snap">
+              <div class="snap-glow"></div>
+              <div class="snap-icon-box"><i class="fa-brands fa-snapchat"></i></div>
+              <div class="snap-star"><i class="fa-solid fa-star"></i></div>
+            </div>
+
+            <div class="hc-profile">
+              <div class="hc-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+              <div class="hc-pinfo">
+                <div class="hc-pname">Membre Snapchat+ <span class="plus-tag">✦ PLUS</span></div>
+                <div class="hc-psub" data-i18n="hc_sub">Abonnement actif • Algérie</div>
+              </div>
+            </div>
+
+            <div class="hc-perks">
+              <div class="perk"><i class="fa-solid fa-eye"></i> <span data-i18n="p1">Story Rewatch</span></div>
+              <div class="perk"><i class="fa-solid fa-heart"></i> <span data-i18n="p2">#1 BFF Pin</span></div>
+              <div class="perk"><i class="fa-solid fa-ghost"></i> <span data-i18n="p3">Ghost Trails</span></div>
+              <div class="perk"><i class="fa-solid fa-palette"></i> <span data-i18n="p4">Custom Icons</span></div>
+            </div>
+
+            <div class="float-chip chip-a">
+              <i class="fa-solid fa-shield-halved yellow"></i>
+              <div><b>100%</b><small data-i18n="c1">Sécurisé</small></div>
+            </div>
+            <div class="float-chip chip-b">
+              <i class="fa-solid fa-clock yellow"></i>
+              <div><b>&lt;10min</b><small data-i18n="c2">Activation</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <a href="#s-adv" class="scroll-hint" aria-label="Défiler vers le bas">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ─── SECTION 2: ADVANTAGES ─── -->
+    <section class="section" id="s-adv">
+      <div class="container">
+        <div class="sec-head reveal-item">
+          <span class="tag" data-i18n="adv_tag">NOS GARANTIES</span>
+          <h2 data-i18n="adv_h2">Pourquoi Faire Confiance à ISLEM SERVICE ?</h2>
+          <p data-i18n="adv_sub">Une expérience d'achat transparente, rapide et sans mauvaise surprise.</p>
+        </div>
+
+        <div class="adv-grid">
+          <div class="adv-card reveal-item" data-card>
+            <div class="adv-card-spot"></div>
+            <div class="adv-icon"><i class="fa-solid fa-key"></i></div>
+            <h3 data-i18n="a1_h">Activation sans mot de passe</h3>
+            <p data-i18n="a1_p">Votre sécurité est notre priorité. Nous n'avons jamais besoin de votre mot de passe.</p>
+          </div>
+          <div class="adv-card reveal-item" data-card>
+            <div class="adv-card-spot"></div>
+            <div class="adv-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3 data-i18n="a2_h">Service ultra rapide</h3>
+            <p data-i18n="a2_p">Activation en 5 à 15 minutes après confirmation du paiement.</p>
+          </div>
+          <div class="adv-card reveal-item" data-card>
+            <div class="adv-card-spot"></div>
+            <div class="adv-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3 data-i18n="a3_h">Support client dédié</h3>
+            <p data-i18n="a3_p">Assistance continue pour vous guider jusqu'à l'activation complète.</p>
+          </div>
+          <div class="adv-card reveal-item" data-card>
+            <div class="adv-card-spot"></div>
+            <div class="adv-icon"><i class="fa-solid fa-medal"></i></div>
+            <h3 data-i18n="a4_h">Satisfaction garantie</h3>
+            <p data-i18n="a4_p">Des centaines de clients satisfaits avec un taux de satisfaction &gt; 99%.</p>
+          </div>
+          <div class="adv-card reveal-item" data-card>
+            <div class="adv-card-spot"></div>
+            <div class="adv-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3 data-i18n="a5_h">Réponse rapide WhatsApp</h3>
+            <p data-i18n="a5_p">Parlez directement avec un humain, pas un robot. Réponse instantanée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 3: OFFERS ─── -->
+    <section class="section" id="s-offers">
+      <div class="container">
+        <div class="sec-head reveal-item">
+          <span class="tag" data-i18n="off_tag">NOS TARIFS</span>
+          <h2 data-i18n="off_h2">Choisissez Votre Offre Snapchat+</h2>
+          <p data-i18n="off_sub">Tarifs clairs en Dinars Algériens (DA), sans frais cachés.</p>
+        </div>
+
+        <!-- Device Tabs -->
+        <div class="device-tabs reveal-item">
+          <button class="dtab active" id="tab-iphone" onclick="switchTab('iphone')">
+            <i class="fa-brands fa-apple"></i>
+            <span data-i18n="tab_iphone">iPhone (iOS)</span>
+            <span class="dtab-badge" data-i18n="tab_iphone_b">3 Offres</span>
+          </button>
+          <button class="dtab" id="tab-android" onclick="switchTab('android')">
+            <i class="fa-brands fa-android"></i>
+            <span data-i18n="tab_android">Android</span>
+            <span class="dtab-badge" data-i18n="tab_android_b">1 Offre</span>
+          </button>
+        </div>
+
+        <!-- iPhone Grid -->
+        <div class="plans-grid reveal-item" id="plans-iphone">
+          <!-- 1 Mois -->
+          <div class="plan-card" data-card>
+            <div class="plan-card-spot"></div>
+            <div class="plan-dev"><i class="fa-brands fa-apple"></i> iPhone</div>
+            <h3 class="plan-dur" data-i18n="p1m">1 Mois</h3>
+            <p class="plan-sub" data-i18n="p1m_s">Idéal pour tester Snapchat+</p>
+            <div class="plan-price"><span class="price-num">500</span><span class="price-cur">DA</span></div>
+            <ul class="plan-feats">
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_nopass">Sans mot de passe</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_fast">Activation 5-15 min</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_badge">Badge étoile ✦</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_wa">Assistance WhatsApp</span></li>
+            </ul>
+            <button class="btn btn-order" onclick="openModal('iphone_1m')">
+              <span data-i18n="btn_order">Commander</span><i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- 3 Mois POPULAR -->
+          <div class="plan-card plan-hot beam-border" data-card>
+            <div class="plan-card-spot"></div>
+            <div class="ribbon" data-i18n="r_pop">★ POPULAIRE</div>
+            <div class="plan-dev"><i class="fa-brands fa-apple"></i> iPhone</div>
+            <h3 class="plan-dur" data-i18n="p3m">3 Mois</h3>
+            <p class="plan-sub" data-i18n="p3m_s">Le choix préféré de nos clients</p>
+            <div class="plan-price"><span class="price-num">1500</span><span class="price-cur">DA</span></div>
+            <ul class="plan-feats">
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_nopass">Sans mot de passe</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_priority">Activation prioritaire</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_badge">Badge étoile ✦</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_excl">Toutes les fonctions</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_g3">Garantie 3 mois</span></li>
+            </ul>
+            <button class="btn btn-primary pulse-btn" onclick="openModal('iphone_3m')">
+              <span data-i18n="btn_order">Commander</span><i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- 12 Mois BEST VALUE -->
+          <div class="plan-card" data-card>
+            <div class="plan-card-spot"></div>
+            <div class="ribbon ribbon-orange" data-i18n="r_best">MEILLEUR PRIX</div>
+            <div class="plan-dev"><i class="fa-brands fa-apple"></i> iPhone</div>
+            <h3 class="plan-dur" data-i18n="p12m">12 Mois (1 An)</h3>
+            <p class="plan-sub" data-i18n="p12m_s">Économie maximale sur l'année</p>
+            <div class="plan-price"><span class="price-num">2700</span><span class="price-cur">DA</span></div>
+            <ul class="plan-feats">
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_nopass">Sans mot de passe</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_express">Activation express</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_badge">Badge officiel 1 an</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_vip">Support VIP 7j/7</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_save">+3300 DA économisés</span></li>
+            </ul>
+            <button class="btn btn-order" onclick="openModal('iphone_12m')">
+              <span data-i18n="btn_order">Commander</span><i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Android Grid -->
+        <div class="plans-grid plans-android hidden" id="plans-android">
+          <div class="plan-card plan-hot beam-border" data-card style="max-width:460px;margin:0 auto">
+            <div class="plan-card-spot"></div>
+            <div class="ribbon" data-i18n="r_rec">RECOMMANDÉ</div>
+            <div class="plan-dev"><i class="fa-brands fa-android"></i> Android</div>
+            <h3 class="plan-dur" data-i18n="p3m">3 Mois</h3>
+            <p class="plan-sub" data-i18n="pandroid_s">Optimisé pour tous smartphones Android</p>
+            <div class="plan-price"><span class="price-num">1500</span><span class="price-cur">DA</span></div>
+            <ul class="plan-feats">
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_nopass">Sans mot de passe</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_fast">Activation 5-15 min</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_badge">Badge étoile ✦</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_compat">Samsung, Xiaomi, Oppo…</span></li>
+              <li><i class="fa-solid fa-check"></i><span data-i18n="f_wa">Assistance WhatsApp</span></li>
+            </ul>
+            <button class="btn btn-primary pulse-btn" onclick="openModal('android_3m')">
+              <span data-i18n="btn_order">Commander</span><i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Payment Banner -->
+        <div class="pay-banner reveal-item">
+          <div class="pay-item">
+            <div class="pay-ico"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div><strong data-i18n="pb_bm">BaridiMob</strong><small data-i18n="pb_bm_s">Accessible à tous (Instantané)</small></div>
+          </div>
+          <div class="pay-sep"></div>
+          <div class="pay-item">
+            <div class="pay-ico"><i class="fa-solid fa-building-columns"></i></div>
+            <div><strong data-i18n="pb_ccp">CCP Algérie Poste</strong><small data-i18n="pb_ccp_s">Dans tous les bureaux de poste</small></div>
+          </div>
+          <div class="pay-sep"></div>
+          <div class="pay-item">
+            <div class="pay-ico" style="color:#25D366"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><strong data-i18n="pb_wa">Validation WhatsApp</strong><small data-i18n="pb_wa_s">Numéro officiel vérifié</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 4: WHY US ─── -->
+    <section class="section" id="s-why">
+      <div class="container">
+        <div class="why-grid">
+          <!-- Left: stats -->
+          <div class="why-left reveal-item">
+            <span class="tag" data-i18n="why_tag">EXCELLENCE</span>
+            <h2 data-i18n="why_h2">Pourquoi Choisir ISLEM SERVICE ?</h2>
+            <p data-i18n="why_p">Nous avons simplifié le processus pour vous offrir une expérience fluide, rapide et en toute confiance.</p>
+            <div class="stats-row">
+              <div class="stat-box" data-card>
+                <div class="stat-val"><span class="stat-num counter" data-target="1500">1500</span><span class="yellow">+</span></div>
+                <span class="stat-lbl" data-i18n="s1">Clients en Algérie</span>
+              </div>
+              <div class="stat-box" data-card>
+                <div class="stat-val"><span class="stat-num">100</span><span class="yellow">%</span></div>
+                <span class="stat-lbl" data-i18n="s2">Sans mot de passe</span>
+              </div>
+              <div class="stat-box" data-card>
+                <div class="stat-val"><span class="stat-num counter" data-target="5">5</span><span class="yellow">min</span></div>
+                <span class="stat-lbl" data-i18n="s3">Délai moyen</span>
+              </div>
+            </div>
+          </div>
+          <!-- Right: list -->
+          <div class="why-list">
+            <div class="why-item reveal-item" data-card>
+              <div class="why-ico"><i class="fa-solid fa-gauge-high"></i></div>
+              <div><h4 data-i18n="w1h">Activation rapide</h4><p data-i18n="w1p">Dès réception du reçu, activation instantanée. Aucune attente inutile.</p></div>
+            </div>
+            <div class="why-item reveal-item" data-card>
+              <div class="why-ico"><i class="fa-solid fa-briefcase"></i></div>
+              <div><h4 data-i18n="w2h">Service professionnel</h4><p data-i18n="w2p">Méthode officielle, éprouvée, respectant les règles de la plateforme.</p></div>
+            </div>
+            <div class="why-item reveal-item" data-card>
+              <div class="why-ico"><i class="fa-solid fa-life-ring"></i></div>
+              <div><h4 data-i18n="w3h">Assistance complète</h4><p data-i18n="w3p">Support jusqu'à la pleine satisfaction. Nous ne vous laissons jamais seul.</p></div>
+            </div>
+            <div class="why-item reveal-item" data-card>
+              <div class="why-ico"><i class="fa-solid fa-circle-check"></i></div>
+              <div><h4 data-i18n="w4h">Commande simple</h4><p data-i18n="w4p">3 clics : choisissez l'offre, le paiement, envoyez sur WhatsApp.</p></div>
+            </div>
+            <div class="why-item reveal-item" data-card>
+              <div class="why-ico"><i class="fa-solid fa-shield-halved"></i></div>
+              <div><h4 data-i18n="w5h">Paiement sécurisé</h4><p data-i18n="w5p">BaridiMob ou CCP — canaux bancaires officiels de confiance.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 5: HOW IT WORKS ─── -->
+    <section class="section" id="s-steps">
+      <div class="container">
+        <div class="sec-head reveal-item">
+          <span class="tag" data-i18n="st_tag">PROCESSUS FACILE</span>
+          <h2 data-i18n="st_h2">Comment Se Déroule La Commande ?</h2>
+          <p data-i18n="st_sub">Un parcours d'achat conçu pour être le plus simple possible.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal-item" data-card>
+            <div class="step-card-spot"></div>
+            <div class="step-num">01</div>
+            <div class="step-ico"><i class="fa-solid fa-list-check"></i></div>
+            <h3 data-i18n="st1h">Choisissez votre offre</h3>
+            <p data-i18n="st1p">Sélectionnez la formule (1, 3 ou 12 mois iPhone, ou 3 mois Android).</p>
+          </div>
+          <div class="step-card reveal-item" data-card>
+            <div class="step-card-spot"></div>
+            <div class="step-num">02</div>
+            <div class="step-ico"><i class="fa-solid fa-hand-pointer"></i></div>
+            <h3 data-i18n="st2h">Cliquez Commander</h3>
+            <p data-i18n="st2p">Choisissez BaridiMob ou CCP comme moyen de paiement.</p>
+          </div>
+          <div class="step-card reveal-item" data-card>
+            <div class="step-card-spot"></div>
+            <div class="step-num">03</div>
+            <div class="step-ico" style="color:#25D366"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3 data-i18n="st3h">WhatsApp auto-ouvert</h3>
+            <p data-i18n="st3p">Le site génère automatiquement votre commande et ouvre WhatsApp.</p>
+          </div>
+          <div class="step-card reveal-item" data-card>
+            <div class="step-card-spot"></div>
+            <div class="step-num">04</div>
+            <div class="step-ico yellow"><i class="fa-solid fa-circle-check"></i></div>
+            <h3 data-i18n="st4h">Activation en 5-15 min</h3>
+            <p data-i18n="st4p">Dès votre versement validé, votre Snapchat+ est immédiatement actif.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 6: REVIEWS ─── -->
+    <section class="section" id="s-reviews">
+      <div class="container">
+        <div class="sec-head reveal-item">
+          <span class="tag" data-i18n="rv_tag">TÉMOIGNAGES VÉRIFIÉS</span>
+          <h2 data-i18n="rv_h2">Avis de Nos Clients Satisfaits</h2>
+          <p data-i18n="rv_sub">Ce que disent ceux qui ont activé Snapchat+ chez nous.</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="rev-card reveal-item" data-card>
+            <div class="rev-card-spot"></div>
+            <div class="rev-head">
+              <div class="rev-av">YA</div>
+              <div><h4>Yacine A.</h4><small><i class="fa-solid fa-location-dot"></i> Alger (Kouba)</small></div>
+              <div class="rev-check"><i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p data-i18n="rv1">"Activé en moins de 10 min après BaridiMob. Aucune demande de mot de passe. Merci Islem !"</p>
+            <div class="rev-foot"><span class="yellow">iPhone · 12 Mois</span><span>Hier</span></div>
+          </div>
+          <div class="rev-card reveal-item" data-card>
+            <div class="rev-card-spot"></div>
+            <div class="rev-head">
+              <div class="rev-av">SB</div>
+              <div><h4>Sarah B.</h4><small><i class="fa-solid fa-location-dot"></i> Oran</small></div>
+              <div class="rev-check"><i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p data-i18n="rv2">"Service sérieux et très poli sur WhatsApp. Étoile bien visible sur profil. Je recommande 100%!"</p>
+            <div class="rev-foot"><span class="yellow">Android · 3 Mois</span><span>Il y a 2j</span></div>
+          </div>
+          <div class="rev-card reveal-item" data-card>
+            <div class="rev-card-spot"></div>
+            <div class="rev-head">
+              <div class="rev-av">KM</div>
+              <div><h4>Karim M.</h4><small><i class="fa-solid fa-location-dot"></i> Constantine</small></div>
+              <div class="rev-check"><i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p data-i18n="rv3">"Islem a tout expliqué patiemment. Paiement CCP facile et activation directe. Plus qu'un service !"</p>
+            <div class="rev-foot"><span class="yellow">iPhone · 3 Mois</span><span>Il y a 4j</span></div>
+          </div>
+          <div class="rev-card reveal-item" data-card>
+            <div class="rev-card-spot"></div>
+            <div class="rev-head">
+              <div class="rev-av">AL</div>
+              <div><h4>Amine L.</h4><small><i class="fa-solid fa-location-dot"></i> Sétif</small></div>
+              <div class="rev-check"><i class="fa-solid fa-check"></i></div>
+            </div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p data-i18n="rv4">"7 minutes chrono pour l'activation ! 2700 DA pour 1 an complet c'est imbattable. Bravo !"</p>
+            <div class="rev-foot"><span class="yellow">iPhone · 12 Mois</span><span>Cette semaine</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 7: FAQ ─── -->
+    <section class="section" id="s-faq">
+      <div class="container">
+        <div class="sec-head reveal-item">
+          <span class="tag" data-i18n="fq_tag">QUESTIONS FRÉQUENTES</span>
+          <h2 data-i18n="fq_h2">Tout Ce Que Vous Devez Savoir</h2>
+        </div>
+        <div class="faq-wrap">
+          <div class="faq-item reveal-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span data-i18n="q1">Avez-vous besoin de mon mot de passe Snapchat ?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a"><p data-i18n="a1">NON, absolument pas ! L'activation ne nécessite jamais votre mot de passe. Votre compte reste 100% protégé.</p></div>
+          </div>
+          <div class="faq-item reveal-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span data-i18n="q2">Quels sont les moyens de paiement ?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a"><p data-i18n="a2">BaridiMob (virement instantané) et CCP (versement au bureau de poste). Accessibles à tous en Algérie.</p></div>
+          </div>
+          <div class="faq-item reveal-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span data-i18n="q3">Quel est le délai d'activation ?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a"><p data-i18n="a3">Dès envoi du reçu sur WhatsApp, l'activation se fait entre 5 et 15 minutes en moyenne.</p></div>
+          </div>
+          <div class="faq-item reveal-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span data-i18n="q4">Que faire en cas de problème après achat ?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a"><p data-i18n="a4">Notre équipe est disponible 7j/7 sur WhatsApp +213 799 14 19 16 pour vous aider jusqu'à satisfaction complète.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 8: BIG CTA ─── -->
+    <section class="section section-cta" id="s-cta">
+      <div class="container">
+        <div class="big-cta beam-border reveal-item">
+          <span class="tag" data-i18n="cta_t">PRÊT À DÉMARRER ?</span>
+          <h2 data-i18n="cta_h">Rejoignez Plus de 1500 Utilisateurs Snapchat+ en Algérie</h2>
+          <p data-i18n="cta_p">Ne ratez plus les fonctionnalités exclusives : stories rewatch, badge star, amis n°1 et plus encore.</p>
+          <div class="cta-btns">
+            <a href="#s-offers" class="btn btn-primary pulse-btn">
+              <span data-i18n="btn_offer">Passer Commande</span><i class="fa-solid fa-bolt"></i>
+            </a>
+            <a href="https://wa.me/213799141916" target="_blank" class="btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>+213 799 14 19 16</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="logo-box"><i class="fa-brands fa-snapchat"></i><span class="logo-plus-badge">+</span></div>
+            <div class="logo-texts">
+              <span class="logo-name">ISLEM <span class="yellow">SERVICE</span></span>
+              <span class="logo-tagline" data-i18n="slogan">PLUS QU'UN SERVICE</span>
+            </div>
+            <p data-i18n="ft_about">Service professionnel d'activation en Algérie. Rapide, sécurisé, 7j/7.</p>
+          </div>
+          <div class="footer-links">
+            <h4 data-i18n="ft_nav">Navigation</h4>
+            <a href="#s-hero" data-i18n="nav_home">Accueil</a>
+            <a href="#s-adv" data-i18n="nav_adv">Avantages</a>
+            <a href="#s-offers" data-i18n="nav_offers">Offres</a>
+            <a href="#s-why" data-i18n="nav_why">Pourquoi Nous</a>
+            <a href="#s-reviews" data-i18n="nav_reviews">Avis Clients</a>
+            <a href="#s-faq" data-i18n="nav_faq">FAQ</a>
+          </div>
+          <div class="footer-contact">
+            <h4 data-i18n="ft_contact">Contact</h4>
+            <a href="https://wa.me/213799141916" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> +213 799 14 19 16</a>
+            <p><i class="fa-solid fa-clock yellow"></i> <span data-i18n="ft_hours">7j/7 : 09h - 00h</span></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 <strong>ISLEM SERVICE</strong>. <span data-i18n="ft_rights">Tous droits réservés.</span></span>
+          <span><span class="green-dot"></span> <span data-i18n="ft_online">Activations en ligne</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ─── ORDER MODAL ─── -->
+  <div class="modal-backdrop" id="orderModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-hd">
+        <div class="modal-ico"><i class="fa-brands fa-snapchat"></i></div>
+        <h3 data-i18n="md_title">Finaliser Votre Commande</h3>
+        <p data-i18n="md_sub">Choisissez votre moyen de paiement pour générer la commande WhatsApp.</p>
+      </div>
+
+      <div class="modal-plan-box">
+        <div>
+          <small data-i18n="md_sel">Offre sélectionnée :</small>
+          <strong id="mdPlanName">Snapchat+ iPhone - 3 Mois</strong>
+          <span id="mdPlanDev" class="dev-tag">iPhone</span>
+        </div>
+        <div id="mdPlanPrice" class="md-price">1500 DA</div>
+      </div>
+
+      <div class="modal-pay-label" data-i18n="md_pay_lbl">Moyen de paiement :</div>
+      <div class="pay-choices">
+        <label class="pay-choice" for="r-bm">
+          <input type="radio" name="pm" id="r-bm" value="BaridiMob" checked>
+          <div class="pay-choice-inner">
+            <div class="pay-radio"></div>
+            <div class="pay-ico"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div><span>BaridiMob</span><small data-i18n="bm_s">Accessible à tous (Instantané)</small></div>
+          </div>
+        </label>
+        <label class="pay-choice" for="r-ccp">
+          <input type="radio" name="pm" id="r-ccp" value="CCP">
+          <div class="pay-choice-inner">
+            <div class="pay-radio"></div>
+            <div class="pay-ico"><i class="fa-solid fa-building-columns"></i></div>
+            <div><span>CCP Algérie Poste</span><small data-i18n="ccp_s">Dans tous les bureaux de poste</small></div>
+          </div>
+        </label>
+      </div>
+
+      <div class="modal-field">
+        <label data-i18n="md_name_lbl">Nom ou pseudo Snapchat (facultatif) :</label>
+        <div class="field-wrap"><i class="fa-solid fa-at"></i><input type="text" id="mdName" placeholder="Ex: amir_dz"></div>
+      </div>
+
+      <button class="btn btn-primary btn-block pulse-btn" onclick="confirmOrder()">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span data-i18n="md_confirm">Confirmer sur WhatsApp</span>
+      </button>
+
+      <p class="modal-note"><i class="fa-solid fa-lock yellow"></i> <span data-i18n="md_note">+213 799 14 19 16 — Aucun mot de passe requis.</span></p>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/213799141916" target="_blank" class="wa-float" aria-label="WhatsApp ISLEM SERVICE">
+    <span class="wa-tooltip"><span class="wa-dot"></span> <span data-i18n="wa_tip">En ligne • Réponse rapide</span></span>
+    <span class="wa-glow"></span>
+    <span class="wa-circle"><i class="fa-brands fa-whatsapp"></i></span>
+    <span class="wa-badge">1</span>
+  </a>
+
+  <!-- Mobile Sticky Bar -->
+  <div class="mob-sticky" id="mobSticky">
+    <div>
+      <strong class="yellow">Snapchat+</strong>
+      <small data-i18n="st_fast">Activation 5-15 min</small>
+    </div>
+    <a href="#s-offers" class="btn btn-primary btn-sm">
+      <span data-i18n="btn_offer">Commander</span><i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
