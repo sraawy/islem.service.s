@@ -35,7 +35,7 @@ const T = {
     c1:         "Sécurisé",
     c2:         "Activation",
     adv_tag:    "NOS GARANTIES",
-    adv_h2:     "Pourquoi Faire Confiance à ISLEM SERVICE ?",
+    adv_h2:     "Pourquoi Faire Confiance à SERVICE ?",
     adv_sub:    "Une expérience d'achat transparente, rapide et sans mauvaise surprise.",
     a1_h:       "Activation sans mot de passe",
     a1_p:       "Votre sécurité est notre priorité. Nous n'avons jamais besoin de votre mot de passe.",
@@ -82,7 +82,7 @@ const T = {
     pb_wa:      "Validation WhatsApp",
     pb_wa_s:    "Numéro officiel vérifié",
     why_tag:    "EXCELLENCE",
-    why_h2:     "Pourquoi Choisir ISLEM SERVICE ?",
+    why_h2:     "Pourquoi Choisir SERVICE ?",
     why_p:      "Nous avons simplifié le processus pour vous offrir une expérience fluide, rapide et en toute confiance.",
     s1:         "Clients en Algérie",
     s2:         "Sans mot de passe",
@@ -176,7 +176,7 @@ const T = {
     c1:         "آمن تماماً",
     c2:         "التفعيل",
     adv_tag:    "ضماناتنا",
-    adv_h2:     "لماذا تثق بـ ISLEM SERVICE؟",
+    adv_h2:     "لماذا تثق بـ  SERVICE؟",
     adv_sub:    "تجربة شراء شفافة وسريعة وبدون مفاجآت.",
     a1_h:       "تفعيل بدون كلمة مرور",
     a1_p:       "أمانك هو أولويتنا. لا نحتاج أبداً إلى كلمة مرورك.",
@@ -223,7 +223,7 @@ const T = {
     pb_wa:      "تأكيد عبر واتساب",
     pb_wa_s:    "رقم رسمي موثق",
     why_tag:    "التميز",
-    why_h2:     "لماذا تختار ISLEM SERVICE؟",
+    why_h2:     "لماذا تختار SERVICE؟",
     why_p:      "بسّطنا العملية لنقدم لك تجربة سلسة وسريعة وموثوقة.",
     s1:         "عميل في الجزائر",
     s2:         "بدون كلمة مرور",
@@ -472,14 +472,14 @@ function confirmOrder() {
 
   let msg;
   if (lang === 'ar') {
-    msg  = `🟡 *طلب جديد — ISLEM SERVICE*\n\n`;
+    msg  = `🟡 *طلب جديد —  SERVICE*\n\n`;
     msg += `📦 العرض: *${offer.ar || offer.fr}*\n`;
     msg += `💰 السعر: *${offer.price}*\n`;
     msg += `💳 وسيلة الدفع: *${pm}*\n`;
     if (username) msg += `👤 الاسم / سناب: *${username}*\n`;
     msg += `\n✅ أنا مستعد للدفع وأطلب التفعيل فضلاً.`;
   } else {
-    msg  = `🟡 *Nouvelle Commande — ISLEM SERVICE*\n\n`;
+    msg  = `🟡 *Nouvelle Commande — SERVICE*\n\n`;
     msg += `📦 Offre: *${offer.fr}*\n`;
     msg += `💰 Prix: *${offer.price}*\n`;
     msg += `💳 Paiement: *${pm}*\n`;
@@ -487,7 +487,7 @@ function confirmOrder() {
     msg += `\n✅ Je suis prêt(e) à payer et je demande l'activation.`;
   }
 
-  const url = `https://wa.me/213799141916?text=${encodeURIComponent(msg)}`;
+  const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
   closeModal();
 }
