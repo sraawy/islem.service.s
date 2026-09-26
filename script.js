@@ -111,9 +111,9 @@ const T = {
     rv_tag:     "TÉMOIGNAGES VÉRIFIÉS",
     rv_h2:      "Avis de Nos Clients Satisfaits",
     rv_sub:     "Ce que disent ceux qui ont activé Snapchat+ chez nous.",
-    rv1:        '"Activé en moins de 10 min après BaridiMob. Aucune demande de mot de passe. Merci Islem !"',
+    rv1:        '"Activé en moins de 10 min après BaridiMob. Aucune demande de mot de passe. Merci  !"',
     rv2:        '"Service sérieux et très poli sur WhatsApp. Étoile bien visible sur profil. Je recommande 100%!"',
-    rv3:        '"Islem a tout expliqué patiemment. Paiement CCP facile et activation directe. Plus qu\'un service !"',
+    rv3:        '"User a tout expliqué patiemment. Paiement CCP facile et activation directe. Plus qu\'un service !"',
     rv4:        '"7 minutes chrono pour l\'activation ! 2700 DA pour 1 an complet c\'est imbattable. Bravo !"',
     fq_tag:     "QUESTIONS FRÉQUENTES",
     fq_h2:      "Tout Ce Que Vous Devez Savoir",
@@ -307,7 +307,7 @@ let currentOfferKey = 'iphone_3m';
 function chooseLang(lang) {
   setLang(lang);
   try {
-    localStorage.setItem('islem_service_lang', lang);
+    localStorage.setItem('user_service_lang', lang);
   } catch (e) {
     // LocalStorage fallback
   }
@@ -793,7 +793,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Check if visitor has chosen a language before
   let savedLang = 'fr';
   try {
-    savedLang = localStorage.getItem('islem_service_lang');
+    savedLang = localStorage.getItem('user_service_lang');
   } catch (e) {}
 
   const overlay = document.getElementById('langOverlay');
